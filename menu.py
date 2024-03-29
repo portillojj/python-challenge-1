@@ -194,8 +194,8 @@ print("This is what we are preparing for you.\n")
 # Uncomment the following line to check the structure of the order
 #print(order_list)
 
-print("Item name                 | Price  | Quantity")
-print("--------------------------|--------|----------")
+print("Item name                | Price     | Quantity")
+print("-------------------------|-----------|----------")
 
 # 6. Loop through the items in the customer's order
 for item in order_list:
@@ -209,7 +209,8 @@ for item in order_list:
     num_price_spaces = 9 - len(str(item_price))
     num_quantity_spaces = 10 - len(str(quantity))
 
-    # 9. Create space strings
+    # 9. Create space strings1
+
     item_spaces = " " * num_item_spaces
     price_spaces = " " * num_price_spaces
     quantity_spaces = " " * num_quantity_spaces
@@ -218,7 +219,8 @@ for item in order_list:
     print(f"{item_name}{item_spaces}| ${item_price}{price_spaces}| {quantity}{quantity_spaces}")
 
 # 11. Calculate the cost of the order using list comprehension
+total_cost = sum([item["Price"] * item["Quantity"] for item in order_list])
+
 # Multiply the price by quantity for each item in the order list, then sum()
 # and print the prices.
-    total_cost = sum([item["Price"] * item["Quantity"] for item in order_list])
-    print("Total cost of the order:", total_cost)
+print("\nTotal cost of the order:", total_cost)
